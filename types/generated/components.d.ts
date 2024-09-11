@@ -36,17 +36,6 @@ export interface InterestInterest extends Struct.ComponentSchema {
   };
 }
 
-export interface CertificatesCertificates extends Struct.ComponentSchema {
-  collectionName: 'components_certificates_certificates';
-  info: {
-    displayName: 'Certificates';
-    icon: 'file';
-  };
-  attributes: {
-    name: Schema.Attribute.String;
-  };
-}
-
 export interface ExperienceExperience extends Struct.ComponentSchema {
   collectionName: 'components_experience_experiences';
   info: {
@@ -80,15 +69,26 @@ export interface EducationEducation extends Struct.ComponentSchema {
   };
 }
 
+export interface CertificatesCertificates extends Struct.ComponentSchema {
+  collectionName: 'components_certificates_certificates';
+  info: {
+    displayName: 'Certificates';
+    icon: 'file';
+  };
+  attributes: {
+    name: Schema.Attribute.String;
+  };
+}
+
 declare module '@strapi/strapi' {
   export module Public {
     export interface ComponentSchemas {
       'skills.skills': SkillsSkills;
       'project.project': ProjectProject;
       'interest.interest': InterestInterest;
-      'certificates.certificates': CertificatesCertificates;
       'experience.experience': ExperienceExperience;
       'education.education': EducationEducation;
+      'certificates.certificates': CertificatesCertificates;
     }
   }
 }
